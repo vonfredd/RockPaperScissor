@@ -13,44 +13,74 @@ function getComputerChoise(){
             break;    
     }
 }
+let computerScore = 0;
+let playerScore = 0;
+let round = 0;
 
-const playerSelection = prompt("Rock, Paper or Scissor?");
-const computerSelection = getComputerChoise();
 
 function gameRound(playerSelection,computerSelection){
     switch (playerSelection.toLowerCase()){
         case "rock":
             if(computerSelection==="scissor"){
+                playerScore++;
+                round++;
                 return console.log(`You won because ${playerSelection} beats ${computerSelection}`);
             }else if(computerSelection==="paper"){
+                computerScore++
+                round++;
                 return console.log(`You lost because ${computerSelection} beats ${playerSelection}`);
             }else{
-                console.log("It's a draw!")
+                console.log("It's a draw!");
+                round++;
             }
         break;
 
         case "paper":
             if(computerSelection==="rock"){
+                playerScore++;
+                round++;
                 return console.log(`You won because ${playerSelection} beats ${computerSelection}`);
             }else if(computerSelection==="scissor"){
+                computerScore++
+                round++;
                 return console.log(`You lost because ${computerSelection} beats ${playerSelection}`);
             }else{
                 console.log("It's a draw!")
+                round++;
             }
         break;
 
         case "scissors":
             if(computerSelection==="paper"){
+                playerScore++;
+                round++;
                 return console.log(`You won because ${playerSelection} beats ${computerSelection}`);
             }else if(computerSelection==="rock"){
+                computerScore++
+                round++;
                 return console.log(`You lost because ${computerSelection} beats ${playerSelection}`);
             }else{
                 console.log("It's a draw!")
+                round++;
             }
         break;
 
     }
 }
 
-gameRound(playerSelection,computerSelection);
+function game(){
+    while(round != 5){
+    const playerSelection = prompt("Rock, Paper or Scissors?");
+    const computerSelection = getComputerChoise();
+    gameRound(playerSelection,computerSelection);
+    console.log("--------------\n");
+    console.log("Round :"+round);
+    console.log("Player SCORE = "+playerScore);
+    console.log("CPU SCORE = "+computerScore)
+    console.log("--------------\n");
+    }
+
+}
+
+game();
 
