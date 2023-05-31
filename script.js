@@ -70,14 +70,14 @@ function gameRound(playerSelection,computerSelection){
 
 function game(){
     while(round != 5){
-    const playerSelection = prompt("Rock, Paper or Scissors?");
-    const computerSelection = getComputerChoise();
-    gameRound(playerSelection,computerSelection);
     console.log("--------------\n");
     console.log("Round :"+round);
     console.log("Player SCORE = "+playerScore);
     console.log("CPU SCORE = "+computerScore)
     console.log("--------------\n");
+    const playerSelection = prompt("Rock, Paper or Scissors?");
+    const computerSelection = getComputerChoise();
+    gameRound(playerSelection,computerSelection);
     }
 
 }
